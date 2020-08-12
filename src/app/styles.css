@@ -7,15 +7,15 @@ label {
   margin-right: 4px;
 }
 
-label:after {
+/* label:after {
   content: ":"
-}
+} */
 
 .flex-container {
   /* makes vertical columns */
   display: flex;
   /* flex-direction's default is row */
-  flex-direction: column;
+
   /* flex-wrap defaults to nowrap */
     /* set to wrap so they dont spill out the side but stack to fit */
   /* flex-row is combining flex-direction & flex-wrap tg */
