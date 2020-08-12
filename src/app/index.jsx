@@ -15,6 +15,7 @@ export default function App() {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}&units=${scale}`)
       .then((resp) => resp.json())
       .then((json) => {
+        console.log(json)
         if(json.cod === "404") return
         setData(json.list)
       })
@@ -28,7 +29,7 @@ export default function App() {
         const {dt,dt_txt, main} = day
         const {temp, feels_like, temp_max, temp_min, humidity} = main
         const {speed} = day.wind
-        const {description} = day.weather[0]
+        const {description,icon} = day.weather[0]
         if(dt_txt.includes("12:00")){
           return <Item
             key={dt}
@@ -41,6 +42,7 @@ export default function App() {
             windSpeed={speed}
             description={description}
             scale={scale}
+            iconId={icon}
           />
         }
       })
