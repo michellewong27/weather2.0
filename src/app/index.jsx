@@ -15,14 +15,13 @@ export default function App() {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}&units=${scale}`)
       .then((resp) => resp.json())
       .then((json) => {
-        console.log(json)
         if(json.cod === "404") return
         setData(json.list)
       })
   }, [city, scale])
 
   return <div>
-    <Toolbar  city={city} setCity={setCity} scale={scale} setScale={setScale}/>
+    <Toolbar city={city} setCity={setCity} scale={scale} setScale={setScale}/>
     <div className="flex-container">
     {
       data.map(day => {
@@ -41,6 +40,7 @@ export default function App() {
             humidity={humidity}
             windSpeed={speed}
             description={description}
+            scale={scale}
           />
         }
       })

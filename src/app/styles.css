@@ -1,3 +1,7 @@
+body {
+  background: linear-gradient(to bottom, #3366ff 0%, #33ccff 100%);
+}
+
 label {
   display: inline-block;
   margin-right: 4px;
@@ -15,11 +19,11 @@ label:after {
     /* set to wrap so they dont spill out the side but stack to fit */
   /* flex-row is combining flex-direction & flex-wrap tg */
   flex-wrap: wrap;
-  background: pink;
-  height: 80%;
+  background: white;
+  height: 100%;
   width: 80%;
   padding: 0.5em;
-  margin: 25vh auto 0;
+  margin: 25vh auto;
   /* justify-content default value is flex-start */
     /* moving the content so flex-end pushes everything to the end */
     /* space-between puts even space b/w them all */
@@ -31,12 +35,15 @@ label:after {
   flex: 1;
   background: lightblue;
   margin: 0.5em;
-  padding: 0.5rem
+  padding: 0.5rem;
+  font-size: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
 }
 
 .toolbar {
   display: flex;
   justify-content: center;
-  background: black;
+  background: white;
   padding: 20px;
 }
