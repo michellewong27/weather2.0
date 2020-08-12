@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Item({date, temp, feels, max, min, humidity, wind, description}) {
+export default function Item({date, temp, feels, max, min, humidity, windSpeed, description}) {
   return <div className="flex-column">
   <div><label>Date</label>{date}</div>
   <div><label>Temperature</label>{temp}</div>
@@ -8,7 +8,7 @@ export default function Item({date, temp, feels, max, min, humidity, wind, descr
   <div><label>Max temp</label>{max}</div>
   <div><label>Min Temp</label>{min}</div>
   <div><label>Humidity</label>{humidity}</div>
-  <div><label>Wind speed</label>{wind}</div>
+  <div><label>Wind speed</label>{windSpeed}</div>
   <div><label>Description</label>{description}</div>
 </div>
 }

@@ -8,10 +8,35 @@ label:after {
 }
 
 .flex-container {
+  /* makes vertical columns */
   display: flex;
+  /* flex-direction's default is row */
+  /* flex-wrap defaults to nowrap */
+    /* set to wrap so they dont spill out the side but stack to fit */
+  /* flex-row is combining flex-direction & flex-wrap tg */
   flex-wrap: wrap;
+  background: pink;
+  height: 80%;
+  width: 80%;
+  padding: 0.5em;
+  margin: 25vh auto 0;
+  /* justify-content default value is flex-start */
+    /* moving the content so flex-end pushes everything to the end */
+    /* space-between puts even space b/w them all */
+  /* align-items default is stretch */
+    /* since flex-direction's a row, align-items is working vertically & justify-content's working horizontally */
 }
 
 .flex-column {
   flex: 1;
+  background: lightblue;
+  margin: 0.5em;
+  padding: 0.5rem
+}
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  background: black;
+  padding: 20px;
 }

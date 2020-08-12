@@ -15,7 +15,7 @@ export default function App() {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}&units=${scale}`)
       .then((resp) => resp.json())
       .then((json) => {
-
+        console.log(json)
         if(json.cod === "404") return
         setData(json.list)
       })
@@ -26,16 +26,23 @@ export default function App() {
     <div className="flex-container">
     {
       data.map(day => {
-        const {dt, main} = day
-        const {temp, feels_like, max_temp, min_temp, humidity} = main
-        return <Item
-          date={dt}
-          temp={temp}
-          feels={feels_like}
-          max={max_temp}
-          min={min_temp}
-          humidity={humidity}
-        />
+        const {dt,dt_txt, main} = day
+        const {temp, feels_like, temp_max, temp_min, humidity} = main
+        const {speed} = day.wind
+        const {description} = day.weather[0]
+        if(dt_txt.includes("12:00")){
+          return <Item
+            key={dt}
+            date={dt_txt}
+            temp={temp}
+            feels={feels_like}
+            max={temp_max}
+            min={temp_min}
+            humidity={humidity}
+            windSpeed={speed}
+            description={description}
+          />
+        }
       })
     }
     </div>
