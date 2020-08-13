@@ -1,5 +1,6 @@
 body {
   background: linear-gradient(to bottom, #3366ff 0%, #33ccff 100%);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 label {
@@ -21,28 +22,69 @@ label {
   /* flex-row is combining flex-direction & flex-wrap tg */
   flex-wrap: wrap;
   background: white;
-  width: 80%;
-  padding: 0.5em;
-  margin: 25px auto;
+  width: 90%;
+  border-radius: 8px;
+  padding: 0.5em; 
+  margin: 50px auto;
   /* justify-content default value is flex-start */
     /* moving the content so flex-end pushes everything to the end */
     /* space-between puts even space b/w them all */
   /* align-items default is stretch */
+    /* baseline, only shows when theres diff font sizes (line up on bottom) */
     /* since flex-direction's a row, align-items is working vertically & justify-content's working horizontally */
 }
 
 .flex-column {
   flex: 1;
-  background: lightblue;
+  background: #7bd2f5;
+  opacity: 85%;
   margin: 0.5em;
   padding: 0.5rem;
-  font-size: 15px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  border-radius: 6px;
 }
 
-.toolbar {
+.info{
+  margin: 10px;
+}
+
+.city-search {
   display: flex;
   justify-content: center;
   background: white;
   padding: 20px;
+  border-radius: 8px;
+}
+
+.toolbar {
+  width: 100%;
+  background-color: #7bd2f5;
+}
+
+.toolbar_nav_items ul {
+  list-style-type: none;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.toolbar_nav_items a {
+  display: inline-flex;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.toolbar_nav_items a:hover {
+  background-color: white;
+  color: #7bd2f5;
+}
+
+.toolbar_nav_items a:active{
+  text-decoration: underline;
 }

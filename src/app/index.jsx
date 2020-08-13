@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from "react"
-import "./styles.css"
-
-import Item from "./item"
-import Toolbar from "./toolbar"
-
+import React, {useState, useEffect} from "react";
+import "./styles.css";
+import Item from "./item";
+import CitySearch from "./citysearch";
+import Toolbar from './Toolbar/toolbar'
 const key = 'b9f87ca9b549d0ea2a00970ff58a0d34'
 
 export default function App() {
@@ -22,8 +21,11 @@ export default function App() {
   }, [city, scale])
 
   return <div>
-    <Toolbar city={city} setCity={setCity} scale={scale} setScale={setScale}/>
+    <Toolbar />
+    
+    <CitySearch city={city} setCity={setCity} scale={scale} setScale={setScale}/>
     <div className="flex-container">
+    <h1 style={{display:"flex", width:"100%", justifyContent:"center"}}>{city} Five Day Forecast</h1>
     {
       data.map(day => {
         const {dt,dt_txt, main} = day
