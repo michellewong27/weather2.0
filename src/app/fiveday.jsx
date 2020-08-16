@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import "./styles.css";
 import Item from "./item";
 import CitySearch from "./citysearch";
-import Toolbar from './Toolbar/toolbar'
 const key = 'b9f87ca9b549d0ea2a00970ff58a0d34'
 
 export default function Fiveday() {
@@ -14,18 +13,20 @@ export default function Fiveday() {
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}&units=${scale}`)
       .then((resp) => resp.json())
       .then((json) => {
-        console.log(json)
+        console.log("list", json)
         if(json.cod === "404") return
         setData(json.list)
       })
   }, [city, scale])
 
-  return <div>
+  return (
+    <div>
      <CitySearch city={city} setCity={setCity} scale={scale} setScale={setScale}/>
         <div className="flex-container">
         <h1 style={{display:"flex", width:"100%", justifyContent:"center"}}>{city} Five Day Forecast</h1>
         {
           data.map(day => {
+            console.log(day)
             const {dt,dt_txt, main} = day
             const {temp, feels_like, temp_max, temp_min, humidity} = main
             const {speed} = day.wind
@@ -47,6 +48,7 @@ export default function Fiveday() {
             }
           })
         }
-        </div>
-  </div>
+      </div>
+    </div>
+  )
 }
