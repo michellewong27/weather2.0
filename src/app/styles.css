@@ -48,6 +48,10 @@ label {
   margin: 10px;
 }
 
+.currentInfo{
+  padding: 10px;
+}
+
 .city-search {
   display: flex;
   justify-content: center;

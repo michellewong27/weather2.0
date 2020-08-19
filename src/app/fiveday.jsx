@@ -26,7 +26,6 @@ export default function Fiveday() {
         <h1 style={{display:"flex", width:"100%", justifyContent:"center"}}>{city} Five Day Forecast</h1>
         {
           data.map(day => {
-            console.log(day)
             const {dt,dt_txt, main} = day
             const {temp, feels_like, temp_max, temp_min, humidity} = main
             const {speed} = day.wind

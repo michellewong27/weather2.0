@@ -1,0 +1,18 @@
+// prototypes
+
+function Position(x, y) {
+  this.x = x
+  this.y = y
+
+  return this
+}
+
+Position.prototype.add = function(pos) {
+  return new Position(this.x + pos.x, this.y + pos.y)
+}
+
+// add a new function to the prototype for multiplying a scalar value (2)
+
+const p = new Position(100,400)
+
+console.dir(p)
