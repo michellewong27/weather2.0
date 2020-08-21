@@ -48,8 +48,16 @@ label {
   margin: 10px;
 }
 
-.currentInfo{
-  padding: 10px;
+
+.flex-column-current {
+  flex: 1;
+  background: #7bd2f5;
+  opacity: 85%;
+  margin: 2em;
+  padding: 1rem;
+  font-size: 18px;
+  border-radius: 6px;
+  text-align: center;
 }
 
 .city-search {
